@@ -1,17 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import HomePage from './Pages/HomePage/Homepage';
+import BillingPage from './BillingPage/Billingpage';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import NavBar from './Components/NavBar/NavBar';
 
 function App() { //jsx
   return (
     <div className="App">
-<SampleComponent title="sample prop tilte" hello="world"/>
-    </div>
-  );
-}
-const SampleComponent = (props) => {
-  return(
-    <div>
-    <h1>{props.title} , {props.hello}</h1>
+<BrowserRouter>
+<Routes>
+  <Route element={<HomePage/>} path ='/'/>
+  <Route element={<BillingPage/>} path ='/billing'/>
+</Routes>
+</BrowserRouter>
+
+
+
     </div>
   );
 }
